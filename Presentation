@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 Retro Holiday Game 🎮</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffe4f2;
+      font-family: 'Press Start 2P', cursive;
+      color: #ff007f;
+      text-align: center;
+      padding: 50px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .game-frame {
+      background: #fff0f5;
+      border: 5px dotted #ff69b4;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 20px #ffb6c1;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      color: white;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="game-frame">
+    <h1>🎄 Hello World! Welcome to Codemas 🎮</h1>
+    <p>Powered by HTML, CSS, and holiday cheer. Tap into your creativity and code something magical ✨</p>
+  </div>
+
+  <!-- Snowflakes -->
+  <script>
+    const snowflakes = ['❄️','*','✻','✼','❅'];
+    for (let i = 0; i < 60; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.style.left = `${Math.random() * 100}vw`;
+      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      snowflake.style.fontSize = `${Math.random() * 10 + 14}px`;
+      snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      document.body.appendChild(snowflake);
+    }
+  </script>
+</body>
+</html>
